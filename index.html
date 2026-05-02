@@ -1,26 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Coming Soon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varion - Coming Soon</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/Varion-Logo.png" />
+
   <style>
+    :root {
+      --bg: #071312;
+      --text: #E6E3DF;
+      --muted: rgba(230, 227, 223, 0.7);
+      --accent: rgba(230, 227, 223, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding-top: 20%;
-      background-color: #f5f5f5;
     }
+
+    .container {
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    .logo {
+      width: 260px;
+      max-width: 80%;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 1s ease forwards;
+    }
+
     h1 {
-      font-size: 3em;
-      color: #333;
+      font-size: 2.5rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.2s forwards;
     }
+
     p {
-      color: #666;
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.4s forwards;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: var(--accent);
+      margin: 2rem auto;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.3s forwards;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: rgba(230, 227, 223, 0.5);
+      margin-top: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.6s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>🚧 Coming Soon</h1>
-  <p>Our website is under construction.</p>
+  <div class="container">
+    <img class="logo" src="img\Vario-PiG-crop.png" alt="Varion Logo" />
+
+    <h1>Something is coming.</h1>
+
+    <div class="divider"></div>
+
+    <p>
+      We’re building something new at Varion.<br />
+      Your partners in growth. Turning strategy into performance.
+    </p>
+
+    <div class="tagline">
+      varion.co.za
+    </div>
+  </div>
 </body>
 </html>
