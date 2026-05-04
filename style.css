@@ -706,6 +706,10 @@ header nav a {
     max-width: 520px;
 }
 
+.position-block:first-child {
+    max-width: 520px;
+}
+
 .about-cta {
     text-align: center;
     padding: 90px 60px;
@@ -947,6 +951,11 @@ header nav a {
 
     .leadership-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-positioning-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
         /* 🔹 Show burger */
