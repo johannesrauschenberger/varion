@@ -904,8 +904,21 @@ section {
         grid-template-columns: 1fr 1fr;
     }
 
-        .approach-grid {
+    .approach-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .industries-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .industry-item {
+        padding: 0;
+    }
+
+    .industry-item:not(:last-child)::after {
+        display: none;
     }
 
     .footer-grid {
