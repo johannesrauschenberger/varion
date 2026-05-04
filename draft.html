@@ -10,11 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Icons (Lucide) -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      lucide.createIcons();
-    });
-  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Styles -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -24,17 +20,23 @@
 <body>
 
 <header class="navbar">
-  <a href="/">
+  <a href="/" class="logo-link">
     <img src="img/Varion-PC-crop.png" alt="Varion Logo" class="logo">
   </a>
-  <nav>
+
+  <button class="burger-menu" id="burgerMenu" aria-label="Open navigation menu">
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+  </button>
+
+  <nav class="nav-links-container" id="navLinks">
     <a href="https://varion.co.za/about">About</a>
-    <a href="#">Services</a>
-    <a href="#">Approach</a>
-    <a href="#">Industries</a>
-    <a href="#">Insights</a>
+    <a href="https://varion.co.za/draft#services">Services</a>
+    <a href="https://varion.co.za/draft#approach">Approach</a>
+    <a href="https://varion.co.za/draft#industries">Industries</a>
     <a href="https://varion.co.za/contact">Contact</a>
-    <a href="https://varion.co.za/contact#form" class="btn">Let's Talk</a>
+    <a href="contact.html#form" class="btn">Let's Talk</a>
   </nav>
 </header>
 
@@ -60,7 +62,7 @@
 
     <p class="about-copy">
       Varion Performance Consulting is a management consulting firm specialising
-      in manufacturing turnaround and performance improvement. We combine deep
+      in industrial turnaround and performance improvement. We combine deep
       operational expertise with practical execution to help businesses stabilise,
       transform and scale.
     </p>
@@ -306,4 +308,27 @@
   </div>
 </footer>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    lucide.createIcons();
+
+    const burger = document.getElementById("burgerMenu");
+    const navLinks = document.getElementById("navLinks");
+    const navItems = navLinks.querySelectorAll("a");
+
+    burger.addEventListener("click", function () {
+      burger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener("click", function () {
+        burger.classList.remove("active");
+        navLinks.classList.remove("active");
+      });
+    });
+  });
+</script>
+
+</body>
 </html>
