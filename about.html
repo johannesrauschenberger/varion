@@ -16,15 +16,21 @@
 <body>
 
 <header class="navbar">
-  <a href="/">
+  <a href="/" class="logo-link">
     <img src="img/Varion-PC-crop.png" alt="Varion Logo" class="logo">
   </a>
-  <nav>
+
+  <button class="burger-menu" id="burgerMenu" aria-label="Open navigation menu">
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+  </button>
+
+  <nav class="nav-links-container" id="navLinks">
     <a href="https://varion.co.za/about">About</a>
     <a href="#">Services</a>
     <a href="#">Approach</a>
     <a href="#">Industries</a>
-    <a href="#">Insights</a>
     <a href="https://varion.co.za/contact">Contact</a>
     <a href="https://varion.co.za/contact#form" class="btn">Let's Talk</a>
   </nav>
@@ -41,8 +47,8 @@
     <h1>Built on operational experience, not theory.</h1>
 
     <p>
-      Varion Performance Consulting helps manufacturing and industrial businesses
-      turn strategy into measurable, sustainable performance.
+      Varion Performance Consulting works with manufacturing and industrial businesses 
+      to identify, shape, and deliver measurable, sustainable performance improvement.
     </p>
   </div>
 </section>
@@ -138,7 +144,7 @@
       <div class="kicker-line"></div>
       <p>
         Too many improvement initiatives fail because they remain theoretical.
-        We focus on practical execution — working alongside teams to implement
+        We focus on practical execution - working alongside teams to implement
         changes that deliver measurable results and last beyond the engagement.
       </p>
     </div>
@@ -217,6 +223,28 @@
 <script>
   window.addEventListener("DOMContentLoaded", () => {
     lucide.createIcons();
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    lucide.createIcons();
+
+    const burger = document.getElementById("burgerMenu");
+    const navLinks = document.getElementById("navLinks");
+    const navItems = navLinks.querySelectorAll("a");
+
+    burger.addEventListener("click", function () {
+      burger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener("click", function () {
+        burger.classList.remove("active");
+        navLinks.classList.remove("active");
+      });
+    });
   });
 </script>
 
