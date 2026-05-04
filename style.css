@@ -10,11 +10,6 @@ html, body {
     height: 100%;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-
 main {
     flex: 1;
 }
@@ -22,6 +17,8 @@ main {
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Inter', sans-serif;
     background: var(--color-bg);
     color: var(--color-text);
@@ -837,6 +834,57 @@ section {
 }
 
 
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    z-index: 1002;
+}
+
+.burger-menu {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1002;
+}
+
+.burger-bar {
+    position: absolute;
+    left: 4px;
+    width: 32px;
+    height: 2px;
+    background: var(--color-text);
+    transition: 0.25s ease;
+}
+
+.burger-bar:nth-child(1) {
+    top: 11px;
+}
+
+.burger-bar:nth-child(2) {
+    top: 19px;
+}
+
+.burger-bar:nth-child(3) {
+    top: 27px;
+}
+
+.burger-menu.active .burger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu.active .burger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
 @media (max-width: 900px) {
     .hero h1 {
         font-size: 36px;
@@ -887,6 +935,38 @@ section {
     .leadership-grid {
         grid-template-columns: 1fr;
     }
+
+        /* 🔹 Show burger */
+    .burger-menu {
+        display: block;
+    }
+
+    /* 🔹 Hide desktop nav */
+    .nav-links-container {
+        position: fixed;
+        inset: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 26px;
+        background: rgba(2, 14, 16, 0.97);
+        z-index: 1001;
+    }
+
+    .nav-links-container.active {
+        display: flex;
+    }
+
+    .nav-links-container a {
+        margin: 0;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .nav-links-container .btn {
+        margin-top: 8px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -920,6 +1000,19 @@ section {
 
     .approach {
         padding: 60px 20px;
+    }
+
+        .industries-grid {
+        grid-template-columns: 1fr;
+        row-gap: 32px;
+    }
+
+    .industry-item {
+        padding: 0;
+    }
+
+    .industry-item:not(:last-child)::after {
+        display: none;
     }
 
     .footer {
