@@ -7,7 +7,7 @@
 
     --page-padding-desktop: 60px;
     --page-padding-tablet: 40px;
-    --page-padding-mobile: 20px;
+    --page-padding-mobile: 30px;
 
     --section-padding-desktop: 90px var(--page-padding-desktop);
     --section-padding-mobile: 60px var(--page-padding-mobile);
@@ -958,6 +958,11 @@ header nav a {
         gap: 40px;
     }
 
+    .contact-page {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
         /* 🔹 Show burger */
     .burger-menu {
         display: block;
@@ -1069,5 +1074,17 @@ header nav a {
     .leader-photo {
         width: 160px;
         height: 160px;
+    }
+
+    .contact-page {
+        padding: var(--section-padding-mobile);
+    }
+
+    .contact-intro h1 {
+        font-size: 38px;
+    }
+
+    .contact-card {
+        padding: 24px;
     }
 }
