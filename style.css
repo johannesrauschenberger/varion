@@ -432,10 +432,6 @@ header nav a {
 }
 
 
-.oe-pillars {
-    padding: var(--section-padding-desktop);
-}
-
 .oe-pillars-intro {
     max-width: 720px;
     margin-bottom: 60px;
