@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | Varion</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="img/Varion-Logo.png">
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="/" class="logo-link">
+    <img src="img/Varion-PC-crop.png" alt="Varion Logo" class="logo">
+  </a>
+
+  <button class="burger-menu" id="burgerMenu" aria-label="Open navigation menu">
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+  </button>
+
+  <nav class="nav-links-container" id="navLinks">
+    <a href="https://varion.co.za/about">About</a>
+    <a href="#">Services</a>
+    <a href="#">Approach</a>
+    <a href="https://varion.co.za/contact">Contact</a>
+    <a href="https://varion.co.za/contact#form" class="btn">Let's Talk</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="not-found">
+  <div class="not-found-content">
+
+    <p class="section-kicker">404</p>
+    <div class="kicker-line"></div>
+
+    <h1>Page not found</h1>
+
+    <p>
+      The page you’re looking for doesn’t exist or may have been moved.
+    </p>
+
+    <div class="not-found-actions">
+      <a href="https://varion.co.za/" class="btn">Back to Home</a>
+      <a href="https://varion.co.za/contact#form" class="btn btn-secondary">Contact Us</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    lucide.createIcons();
+
+    const burger = document.getElementById("burgerMenu");
+    const navLinks = document.getElementById("navLinks");
+    const navItems = navLinks.querySelectorAll("a");
+
+    burger.addEventListener("click", function () {
+      burger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener("click", function () {
+        burger.classList.remove("active");
+        navLinks.classList.remove("active");
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
