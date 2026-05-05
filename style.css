@@ -1155,6 +1155,76 @@ header nav a {
     background: transparent;
 }
 
+.contact-process {
+    padding: var(--section-padding-desktop);
+}
+
+.contact-process-inner h2 {
+    font-size: 34px;
+    line-height: 1.25;
+    font-weight: 400;
+    margin-bottom: 44px;
+}
+
+.contact-flow {
+    display: grid;
+    grid-template-columns: 1fr 54px 1fr 54px 1fr;
+    align-items: stretch;
+    margin-bottom: 28px;
+}
+
+.contact-flow-step {
+    padding: 28px 24px;
+    background: rgba(230, 227, 223, 0.025);
+    border: 1px solid rgba(230, 227, 223, 0.08);
+}
+
+.contact-flow-step span {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--color-accent);
+    font-size: 13px;
+    letter-spacing: 1.4px;
+    margin-bottom: 18px;
+}
+
+.contact-flow-step p {
+    color: var(--color-text);
+    opacity: 0.7;
+    font-size: 14.5px;
+    line-height: 1.65;
+}
+
+.flow-connector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flow-connector::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(230, 227, 223, 0.14);
+}
+
+.flow-connector i,
+.flow-connector svg {
+    position: relative;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    stroke: var(--color-bg);
+    stroke-width: 2;
+}
+
 
 .logo-link {
     display: inline-flex;
@@ -1633,6 +1703,32 @@ header nav a {
         grid-template-columns: 1fr;
         gap: 50px;
     }
+
+
+    .contact-flow {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .flow-connector {
+        width: 100%;
+        height: 40px;
+    }
+
+    .flow-connector::before {
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        width: auto;
+        transform: translateY(-50%);
+    }
+
+    .flow-connector i,
+    .flow-connector svg {
+        transform: rotate(90deg);
+    }
+
 
         /* 🔹 Show burger */
     .burger-menu {
