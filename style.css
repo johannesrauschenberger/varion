@@ -301,6 +301,14 @@ header nav a {
 }
 
 
+.landing-contact-intro h2 {
+    font-size: 34px;
+    line-height: 1.25;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+
 .services-intro {
     max-width: 640px;
     margin-bottom: 38px;
@@ -758,6 +766,130 @@ header nav a {
 }
 
 
+.insights-preview {
+    display: grid;
+    grid-template-columns: 0.85fr 2.15fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.insights-intro {
+    max-width: 340px;
+}
+
+.insights-intro h2 {
+    font-size: 34px;
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    gap: 24px;
+}
+
+.insight-card {
+    position: relative;
+    min-height: 300px;
+    border: 1px solid rgba(230, 227, 223, 0.08);
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--color-bg);
+}
+
+.insight-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.28;
+    transform: scale(1.02);
+}
+
+.insight-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(2, 14, 16, 0.45),
+            rgba(2, 14, 16, 0.95)
+        );
+}
+
+.insight-card-overlay {
+    position: relative;
+    z-index: 2;
+    min-height: 300px;
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.insight-label {
+    color: var(--color-accent);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.insight-card h3 {
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.insight-card a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.insight-card a span {
+    margin-left: 6px;
+}
+
+.insight-frame {
+    position: absolute;
+    inset: 18px;
+    pointer-events: none;
+}
+
+.insight-frame::before,
+.insight-frame::after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-color: rgba(140, 160, 48, 0.85);
+}
+
+.insight-frame::before {
+    top: 0;
+    left: 0;
+    border-top: 1px solid;
+    border-left: 1px solid;
+}
+
+.insight-frame::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+
+
 .footer {
     background: var(--color-bg-footer);
     padding: 72px 60px 32px;
@@ -1106,6 +1238,77 @@ header nav a {
     border: 1px solid rgba(230, 227, 223, 0.08);
 }
 
+.contact-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 34px 0;
+}
+
+.contact-action {
+    position: relative;
+    padding: 22px 22px 20px;
+    text-decoration: none;
+    border: 1px solid rgba(230, 227, 223, 0.1);
+    background: rgba(230, 227, 223, 0.025);
+    transition: all 0.2s ease;
+}
+
+.contact-action::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    bottom: 0;
+    width: 36px;
+    height: 2px;
+    background: var(--color-accent);
+}
+
+.contact-action span {
+    display: block;
+    color: var(--color-text);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.contact-action small {
+    display: block;
+    color: var(--color-text);
+    opacity: 0.65;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.contact-action:hover {
+    transform: translateY(-2px);
+    border-color: rgba(140, 160, 48, 0.55);
+}
+
+.primary-action {
+    border-left: 2px solid var(--color-accent);
+}
+
+.secondary-action {
+    opacity: 0.9;
+}
+
+.contact-form-intro {
+    margin-bottom: 28px;
+}
+
+.contact-form-intro h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.contact-form-intro p {
+    color: var(--color-text);
+    opacity: 0.65;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -1155,6 +1358,21 @@ header nav a {
     background: transparent;
 }
 
+.form-success {
+    padding: 36px;
+    background: rgba(230, 227, 223, 0.025);
+    border: 1px solid rgba(230, 227, 223, 0.08);
+    border-left: 2px solid var(--color-accent);
+}
+
+.form-success h2 {
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+
 .contact-process {
     padding: var(--section-padding-desktop);
 }
@@ -1174,9 +1392,32 @@ header nav a {
 }
 
 .contact-flow-step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 18px;
     padding: 28px 24px;
     background: rgba(230, 227, 223, 0.025);
     border: 1px solid rgba(230, 227, 223, 0.08);
+}
+
+.contact-flow-step a,
+.contact-flow-step span {
+    color: var(--color-text);
+    opacity: 0.72;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contact-flow-step a:hover {
+    color: var(--color-accent);
+    opacity: 1;
+}
+
+.contact-flow-step h3 {
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 .contact-flow-step span {
@@ -1666,6 +1907,20 @@ header nav a {
         grid-template-columns: 1fr 1fr;
     }
 
+    .insights-preview {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insight-card,
+    .insight-featured {
+        min-height: 260px;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 36px;
@@ -1704,6 +1959,9 @@ header nav a {
         gap: 50px;
     }
 
+    .contact-actions {
+        grid-template-columns: 1fr;
+    }
 
     .contact-flow {
         grid-template-columns: 1fr;
